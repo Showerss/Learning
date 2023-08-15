@@ -1,0 +1,9 @@
+Primitive Types
+	Basically they are built in data types to that language, (char, int, bool, double, etc.)
+	These are the most common primitive data type
+	
+	But overall primitive types are any sort of value that cannot go into anything more simple
+	LISP is a language that has primitive types called atom and list which cant be broken down any more 
+	
+	Pointer, array, function, etc are NOT primitive data types BEUCASE they can be broken down more simply 
+

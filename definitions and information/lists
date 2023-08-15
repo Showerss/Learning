@@ -1,0 +1,6 @@
+Mylist = []
+Mylist.append to add to a list
+Mylist.remove to remove from a list
+
+Mylist = ["s", "o", "n"] + 4 wont add to a list, as only other lists can be added to a list using the + operator 
+
