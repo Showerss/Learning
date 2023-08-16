@@ -3,5 +3,5 @@ t = input("T: ")
 
 if s == t:
     print("Same")
-else
+else:
     print("Different"`)

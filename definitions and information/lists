@@ -4,3 +4,24 @@ Mylist.remove to remove from a list
 
 Mylist = ["s", "o", "n"] + 4 wont add to a list, as only other lists can be added to a list using the + operator 
 
+use -1 to select the last item of a list
+
+calling something outside of a list returns an index error
+
+
+can use mylist[1][0] to access the 2nd values first value in cases such as...
+    mylist = [["ellie", 100], ["phillip", 101]]
+    would return "phillip"
+
+
+you can remove things from 3rd on list or whatnot if you do...
+    mylist[1].remove("phillip")
+    remove only removes the first instance of that word in a list, not all instances of the match
+
+
+mylist.pop(2)
+    .pop removes an element from a list as well at index locations, this index location is 2
+    pop only takes integers, not strings
+
+
+len()
