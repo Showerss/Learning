@@ -1,0 +1,4 @@
+typeerror is when an operation is called to something of the wrong type, 
+
+there are certain functions that only apply to strings, and others that only apply to int/float/etc
+change the type or change the operation you're attempting

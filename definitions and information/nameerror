@@ -1,0 +1,3 @@
+name error is returned when a variable is unknown 
+
+this can happen if something is either spelled wrong or was never defined initially 
