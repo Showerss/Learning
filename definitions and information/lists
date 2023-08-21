@@ -25,3 +25,6 @@ mylist.pop(2)
 
 
 len()
+
+using [:-2] would take everything but the last 2 elements from a list slice
+using [-3:] would print everything but the first 3 elements 

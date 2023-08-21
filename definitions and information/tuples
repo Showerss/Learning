@@ -1,0 +1,14 @@
+a tuple is a data structure that can store multiple pieces of data, similar to a list
+    big difference is that immutable, means that once its made it cannot be changed
+
+my_info = ("Phillip", 29, "Progrmmer")
+
+changing it gives a typeerror, meaning that a tuple cannot be redone
+
+
+tuple = tuple = (1, 2, 3)
+list = list = [1,2,3]
+
+one_element_tuple = (4,)
+
+

@@ -1,0 +1,21 @@
+----
+var.count("param") counts within that variable the number of times "param" is said
+
+
+
+----
+var.sort("param") sorts things within that var based on some parameter, or just blank for standard sorting
+    (reverse=True) can be used to sort things backwards 
+    .sort does not need an = to assign to anything.. .sort works alone just fine
+
+----
+sorted(ListNAme) generates an entirely new list instead of modifying the way .sort() does.. 
+    also sorted() comes first
+    = newlistname = sorted(listname) 
+
+
+
+insert()
+pop()
+range()
+len()
