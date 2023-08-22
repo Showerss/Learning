@@ -1,0 +1,95 @@
+the computer doesnt understand any "language" by natural way
+
+all languages go through a "compiler" that turns the code into 0/1 that the computer understands
+
+----
+heirarchy:
+
+
+
+
+general purpose language (c, rust, c++)
+assembly code (not compiled, its assembled actually)
+machine language (0/1)
+hardware
+
+
+---- lower level languages:
+
+c is the lowest level gen purpose language 
+
+c++ is basically c with OOP added into it
+    no garbage collection (memory management)
+
+rust 
+    newer language, similar to c++ 
+    game engines/etc
+    rocket framework for web applications
+    getting very good at web assembly (a faster alternative to javascript)
+
+pascal: 
+
+
+
+---- compiled vs interpreted
+
+compiled: 
+    uses a compiler 
+    compiled code is executed by CPU 
+    more control of hardware rescources 
+    very fast at runtime
+
+
+interpreted (scripting): 
+    uses garbage collection 
+    uses an interpreter
+    turns into "bytecode" 
+    easier to work with usually
+
+
+---- higher level languages 
+
+    java
+        everything you create is an object,
+        write once run anywhere because JVM eliminates the need for recompiling 
+
+
+
+---- statically typed 
+    typechecking is done at compiling time
+
+---- dynamically typed 
+    do not need types to be defined specifically 
+
+---- kotlin
+    uses the JVM to make android apps.. 
+    can be OOP or procedural 
+
+---- c#
+    statically typed, 
+    OOP (like java)
+    can use .net framework
+    compiled 
+    used for desktop applications, etc, web development (asp.net), gaming (unity), xamiran (mobile)
+
+---- go 
+    compiled, statically typed
+    very fast and scalable, 
+    
+---- python
+    dynamic, interepreted (scripting) language
+    django (web framework)
+
+---- ruby 
+    similar to python, easy to learn 
+    (web framework) ruby on rails 
+
+---- javascript 
+    largest widely used language on the web browser
+    front end frameworks like react
+    node.js for web development 
+    electron uses javascript for desktop applications 
+
+---- php
+    dynamic scripting language
+    
