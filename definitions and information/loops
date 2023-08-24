@@ -1,0 +1,127 @@
+
+# ---- for loops:
+
+    for <temp variable> in <collection>:
+        <do something>
+
+# ---- using range():
+
+    for <temp variable> in <count up to using range()>
+        <do something> 
+
+    to print out what step we're on we can do...
+    for temp in range(6):
+        print("were on step:" str(temp + 1))
+
+
+# ---- while loops:
+
+    while <conditional statement>:
+        <action>
+
+    count = 0
+    while count <= 3:
+        print(count)
+        count += 1
+
+    if writing one line while loops, use a semicolon to say new lines after the loop begins (:)
+
+# ---- while loop for lists
+
+    length = len(example_list)
+    index = 0 
+    while length > index:
+        <action>
+
+    # ----
+
+    python_topics = ["variables", "control flow", "loops", "modules", "classes"]
+
+    #Your code below: 
+    length = len(python_topics)
+    index = 0 
+
+    while index < length:
+        print("I am learning about", python_topics[index])
+        index += 1
+ 
+# ---- break
+
+    # break immediately terminates a loop when a condition is met 
+
+    for i in items:
+        print(i)
+        if i == oranges:
+            print("Found an orange!")
+            break
+
+# ---- continue 
+
+    # do something in a loop, but only if conditions are met within that loop, you can use continue
+    # such as... for i in list.. print only the positive numbers in that list 
+
+    ages = [12, 38, 34, 26, 21, 19, 67, 41, 17]
+    for age in ages:
+        if age < 21:
+            continue  #... this means that if age is less than 21.. skip over it
+    print(age)
+
+# ---- nested for loops
+
+    sales_data = [[12, 17, 22], [2, 10, 3], [5, 12, 13]]
+
+    scoops_sold = 0 
+    for location in sales_data:
+        print(location)
+        for i in location:
+            scoops_sold += i
+    print(scoops_sold)
+
+# ---- list comprehension
+
+    numbers = [2, -1, 79, 33, -45]
+    doubled = [num * 2 for num in numbers]
+    print(doubled)
+
+# ---- list comprehension with conditionals 
+
+    numbers = [2, -1, 79, 33, -45]
+    only_negative_doubled = []
+
+    for num in numbers:
+        if num < 0: 
+            only_negative_doubled.append(num * 2)
+
+    print(only_negative_doubled) 
+
+    # ---- this can be changed to.... (adding in tripling the positive integers)
+
+    numbers = [2, -1, 79, 33, -45]
+    doubled = [num * 2 if num < 0 else num * 3 for num in numbers ]
+    print(doubled)
+
+    #---- adding some if/else/else
+
+    numbers = [2, -1, 79, 33, -45]
+
+    no_if   = [num * 2 for num in numbers]
+    if_only = [num * 2 for num in numbers if num < 0]
+    if_else = [num * 2 if num < 0 else num * 3 for num in numbers]
+
+    #---- example
+    heights = [161, 164, 156, 144, 158, 170, 163, 163, 157]
+
+    can_ride_coaster = [i for i in heights if i > 161]
+    print(can_ride_coaster)
+
+    # ---- another example
+    squares = []
+    single_digits = range(10)
+    for i in single_digits:
+        print(i)
+
+        squares.append(i ** 2)
+        print(squares)
+
+        cubes = [i**3 for i in single_digits]
+        print(cubes)
