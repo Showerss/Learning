@@ -1,0 +1,10 @@
+#functions end with :
+def function_name(param1, param2, param3):
+
+    
+# functions can have 3 different arguements
+    # positional... things that can be called by their position in the function
+    # keyword... things that can be called by their name
+    # default... things with default values
+
+    
