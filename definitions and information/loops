@@ -9,7 +9,7 @@
     for <temp variable> in <count up to using range()>
         <do something> 
 
-    to print out what step we're on we can do...
+    # to print out what step we're on we can do...
     for temp in range(6):
         print("were on step:" str(temp + 1))
 

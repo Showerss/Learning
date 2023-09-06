@@ -7,4 +7,42 @@ def function_name(param1, param2, param3):
     # keyword... things that can be called by their name
     # default... things with default values
 
-    
+
+# built in functions 
+len()
+max()
+min()
+round()
+range()
+
+
+functions
+
+# functions are two different examples of scope, indentation removes or adds variables to global access or not
+
+
+def welcome_user(name):
+    greeting = "Hello " + name + "!"
+ 
+print(greeting) #this part would error out since its calling a variable defined within a function that it cannot get to 
+
+welcome_user("User")
+
+
+
+
+---------------------
+
+balance = 12.55
+name = "Lilia"
+ 
+def withdraw_money(amount):
+    result = balance - amount
+    print("Hello " + name + " your balance remaining is: $" + str(result))
+    return amount
+ 
+withdraw_money(2)
+print("Save your money " + name + "!")
+
+
+# no errors, withdraw_money(amount)
