@@ -1,17 +1,26 @@
-Prof Chow / Mr Chow / Alex
+# Prof Chow / Mr Chow / Alex
 
 
-what is computer science 
-    using computers to solve problems, and the analysis that includes
+# what is computer science 
+#     using computers to solve problems, and the analysis that includes
 
 
-    algo: procedural
-    heuristic: guessing
+#     algo: procedural
+#     heuristic: guessing
 
-    embedded systems: anywhere that systems arent necessarily seen, smart functions
-    bioinformatics: computers to analyze gene/dna
-    machine learning: ai 
-    human computer interactions: AR / XR / VR 
-    graphics: 
+#     embedded systems: anywhere that systems arent necessarily seen, smart functions
+#     bioinformatics: computers to analyze gene/dna
+#     machine learning: ai 
+#     human computer interactions: AR / XR / VR 
+#     graphics: 
 
-    
+#     interpreter goes line by line
+#     compiler does the while program at once
+
+
+# repl = read, evaluate, print, loop
+
+# statements and expressions
+    expressions give an output, statements just say something
+
+
