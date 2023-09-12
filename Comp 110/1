@@ -1,0 +1,15 @@
+# debugging: tracking down and fixing bugs
+
+# syntax error: when something isnt structured correctly, missing a : or . , () etc
+    # caught by the compiler
+
+# runtime errors: only occur when the program is ran, sometimes called exceptions because its an exceptional case... found by the interpreter
+    # such as dividing by 0 
+
+# semantic errors: no errors are spat out on the program but the output is not what you wanted 
+
+# expiremental debugging: basically just the concept that debugging is actively doing detective work and rerunning your program 
+
+# natural languages 
+
+# variables cant start with a number or contain special characters
