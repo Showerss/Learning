@@ -1,0 +1,92 @@
+# strings
+
+
+# string methods:
+food = "banana bread"
+print(food.capitalize())
+
+print("*" + food.center(25) + "*")
+print("*" + food.ljust(25) + "*")     # stars added to show bounds
+print("*" + food.rjust(25) + "*")
+
+print(food.find("e"))
+print(food.find("na"))
+print(food.find("b"))
+
+print(food.rfind("e"))
+print(food.rfind("na"))
+print(food.rfind("b"))
+
+print(food.index("e"))
+
+
+# 9.8 string comparisons... 
+> < = 
+strings actually are counted in alphabetical order when used in a comparitor, 
+capital letters are lower values before lowercase
+
+if you want to know the value that would be in a comparitor... 
+print(ord("A"))
+
+the reverse of it would be...
+print(chr(65))
+
+
+# 9.9 immutable strings 
+you cannot use an array [] in a string, you cannot change individual characters in a string.
+the best you can do is create a new string thats a variation of the original 
+
+greeting = "Hello, world!"
+newGreeting = 'J' + greeting[1:]
+print(newGreeting)
+print(greeting)    
+# should print Jello, World!
+
+# 9.10 string traversal using for loops
+you can traverse normally... by saying 
+for achar in "animals":
+    print("hello")
+    # this would print hello like 7 times
+
+# 9.11 traversal in loops by index numbers
+you can count up using range(len(word))
+fruit = "apple"
+for idx in range(len(fruit)):
+    print(fruit[idx])
+
+or you can count backwards using -1 and counting by -1
+fruit = "apple"
+for idx in range(len(fruit)-1, -1, -1):
+    print(fruit[idx])
+
+
+# 9.12 traversal using a while loop
+fruit = "apple"
+
+position = 0
+while position < len(fruit):
+    print(fruit[position])
+    position = position + 1
+
+
+# 9.13 in and not in operators
+print("a" in "apple")
+this will return True 
+
+
+# accumulator
+remember that when things get returned sometimes they come out backwards
+
+
+# 9.16 letter counting:
+def count(text, aChar):
+    lettercount = 0
+    for c in text:
+        if c == aChar:
+            lettercount = lettercount + 1
+    return lettercount
+
+print(count("banana","a"))
+
+
+# 9.10

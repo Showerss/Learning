@@ -1,0 +1,4 @@
+"""f strings
+"""
+name = phillip
+print(f"hello {name}")

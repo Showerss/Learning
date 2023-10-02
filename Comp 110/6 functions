@@ -26,3 +26,30 @@ wn.exitonclick()
 # -------- example functions that imports turtle and spins squares
 
 # return automatically stops the function at that line
+
+
+for i in range(0,10,3):
+    print("i = ", i)
+
+#the data that moves to represent i in each loop is called an object
+
+
+# a function is an implementation of a set of steps
+def drawSquare(turt, x, y):
+
+alt + shift up/down (copy up and down)
+alt up/down (move these up and down)
+
+# function header
+def drawsquare:
+
+# function body
+everything after the : and indent
+
+docstring comment will display with help()
+
+def functions():
+
+    """
+
+    """

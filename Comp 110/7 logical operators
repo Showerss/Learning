@@ -1,0 +1,25 @@
+and .. both must be true
+or .. one must be true 
+not .. makes the expression a negative
+
+
+
+Level       Category        Operators
+7(high) exponent        **
+6       multiplication  *,/,//,%
+5       addition        +,-
+4       relational      ==,!=,<=,>=,>,<
+3       logical         not
+2       logical         and
+1(low)  logical         or
+
+
+group 9 for lab3
+
+import sound
+sound.wait_until_played()
+sound is a module 
+.wait_until_played() is a method
+
+sound.copy
+

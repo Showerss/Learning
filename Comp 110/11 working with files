@@ -1,0 +1,5 @@
+11.1
+
+open(filename,'r')  #open file to read
+open(filename,'w')  # open file to write
+filevariable.close() #close file
