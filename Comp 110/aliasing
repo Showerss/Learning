@@ -1,0 +1,36 @@
+ailases point to the same original name
+
+------
+
+raffy = 1
+donnie = raffy, 
+
+donnie actually points to the 1, not raffie (technically)
+
+it points to the data within the variable, not the variable itself
+
+
+
+------
+    you can clone a list if you do [:]...
+phrase = [1,2,3]
+phrase_new = phrase[:]       this clones a list 
+
+
+using is returns true or false, but if it keeps pointing to the same object it will returh
+true regardless 
+
+
+list accumulators 
+------
+by item.....
+
+listy = [5.3, 8.2, -52.1]
+for item in listy:
+    print(item)
+
+by index....
+my_list= [1,2,3]
+for i in range(len(my_list)):
+    my_list[i] = my_list[i] + 1
+    print(my_list)
