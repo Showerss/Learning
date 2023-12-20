@@ -3,142 +3,153 @@ import random
 import turtle
 
 ## To do list ##
-# 1. import snake head
-# 2. import MGS music 
-# 5. import snake food pictures
 # 6. make some type of recursion for the snake body
-# 8. make a score counter
-
-
-
 
 ###########################################################
 ################## PREP WORK ##############################
 class GameCharacters(turtle.Turtle):
-    def __init__(self, x,y, shape="square", color="white"):
+    def __init__(self, x,y, shape="square", color="white", speed=0):
+        super().__init__()
         self.speed(0)
         self.shape(shape)
         self.color(color)
         self.penup()
         self.goto(x,y)
 
-#create my main snake but as a subclass since they're all going to be very similar 
-class Snake(GameCharacters):
-    def __init__(self):
-        super().__init__(0,0, "square", "teal")
-        self.direction = "stop"
-
-    ### movements
-    def go_up(self):
-        self.direction = "up"
-    def go_down(self):
-        self.direction = "down"
-    def go_left(self):
-        self.direction = "left"
-    def go_right(self):
-        self.direction = "right"
-    def move(self):
-        if self.direction == 'up':
-            y = self.ycor()
-            self.sety(y + 20)
-        if self.direction == 'down':
-            y = self.ycor()
-            self.sety(y - 20)
-        if self.direction == 'left':
-            x = self.xcor()
-            self.setx(x - 20)
-        if self.direction == 'right':
-            x = self.xcor()
-            self.setx(x + 20)
-
-#snake food subclass
+#snake food subclass, start it off at the same XY value every start of the game
 class Food(GameCharacters):
     def __init__(self):
         super().__init__(0, 100, "circle", "orange")
-        self.speed(0)
-    
-    def show(self):
-        self.showturtle()
 
-#game over turtle subclass
+#game over turtle subclass, hiding it by default cause its only meant to write game over
 class GameOver(GameCharacters):
     def __init__(self):
         super().__init__(0,0, "square", "red")
+        self.hideturtle()
+
+#title screen turtle subclass, hiding it by default cause its only meant to write the title
+class Title(GameCharacters):
+    def __init__(self):
+        super().__init__(0,0, "square", "white")
+        self.hideturtle()
+
+class SnakeBody(GameCharacters):
+    def __init__(self):
+        super().__init__(0,0, "square", "grey")
+        self.direction = "stop"
+
+    def move(self):
+        if self.direction == "up":
+            y = self.ycor()
+            self.sety(y + 20)
+
+        if self.direction == "down":
+            y = self.ycor()
+            self.sety(y - 20)
+
+        if self.direction == "left":
+            x = self.xcor()
+            self.setx(x - 20)
+
+        if self.direction == "right":
+            x = self.xcor()
+            self.setx(x + 20)
+
+class Score(GameCharacters):
+    def __init__(self):
+        super().__init__(0,0, "square", "white")
+        self.hideturtle()
+
+    def update_score(self):
+        self.clear()
+        self.write("Score: {}".format(score), align="top", font=("Courier", 12, "normal"))
+
+    pass
 
 #initialize classes
 food = Food()
 game_over_turtle = GameOver()
-head = Snake()
+title = Title()
+body = SnakeBody()
+score = Score()
+head = SnakeBody()
 
 #initialize additional variables alongside my class initialization
 score = 0 
 segments = []
 delay = 0
 
-
-
-
-
-
-
-
+### movements
+def go_up():
+    head.direction = "up"
+def go_down():
+    head.direction = "down"
+def go_left():
+    head.direction = "left"
+def go_right():
+    head.direction = "right"
 
 ###########################################################
 ############### GAME STARTS HERE  #########################
-
-#title screen creation 
+    
+#title screen creation and movement inputs
 win = turtle.Screen()
+win.listen()
 win.title("Snake? SNAKE? SNAAAAAAAAAKE!")
 win.bgcolor("black")
 win.setup(width=600, height=600)
 
-title_turtle = turtle.Turtle()
-title_turtle.speed(0)
-title_turtle.color("white")
-title_turtle.penup()
-title_turtle.hideturtle()
+# read arrow inputs to move the snake
+win.onkeypress(go_up, "Up")
+win.onkeypress(go_down, "Down")
+win.onkeypress(go_left, "Left")
+win.onkeypress(go_right, "Right")
 
-title_turtle.goto(0,0)
-title_turtle.write("Snake? SNAKE? SNAAAAAAAAAKE!", align="center", font=("Courier", 38, "normal"))
-
-title_turtle.goto(0,-50)
-title_turtle.write("1. Slow", align="center", font=("Courier", 24, "normal"))
-
-title_turtle.goto(0,-100)
-title_turtle.write("2. Normal", align="center", font=("Courier", 24, "normal"))
-
-title_turtle.goto(0,-150)
-title_turtle.write("3. Lightning", align="center", font=("Courier", 24, "normal"))
+# or use WASD if needed
+win.onkeypress(go_up, "w")
+win.onkeypress(go_down, "s")
+win.onkeypress(go_left, "a")
+win.onkeypress(go_right, "d")
 
 
+title.goto(0,0)
+title.write("Snake? SNAKE? SNAAAAAAAAAKE!", align="center", font=("Courier", 32, "normal"))
+
+title.goto(0,-50)
+title.write("1. Slow", align="center", font=("Courier", 24, "normal"))
+
+title.goto(0,-100)
+title.write("2. Normal", align="center", font=("Courier", 24, "normal"))
+
+title.goto(0,-150)
+title.write("3. Lightning", align="center", font=("Courier", 24, "normal"))
 
 ## difficulty selection
 difficulty = win.textinput("Difficulty", "Select difficulty: ")
 if difficulty == "1":
-    title_turtle.clear()
+    title.clear()
     delay = 0.5
 
 elif difficulty == "2":
-    title_turtle.clear()
+    title.clear()
     delay = 0.1
 
 elif difficulty == "3":
-    title_turtle.clear()
+    title.clear()
     delay = 0.01
 
-
-
-
-
+else:
+    pass
 
 
 ##################################################
 ############## MAIN GAME LOOP ####################
 while True:
     win.update()
+    head.move()
 
     #check for collision with border
-    if Snake.xcor() > 290 or Snake.xcor() < -290 or Snake.ycor() > 290 or Snake.ycor() < -290: 
+    if head.xcor() > 290 or head.xcor() < -290 or head.ycor() > 290 or head.ycor() < -290: 
         game_over_turtle.write("Game Over", align="center", font=("Courier", 38, "normal"))
         time.sleep(1)
         win.clear()
@@ -152,22 +163,17 @@ while True:
         score = 0
     
     #check for collision with food
-    if head.distance(Snake.food) < 30:
+    if head.distance(food) < 30:
         #move the food to a random spot
         x = random.randint(-290, 290)
         y = random.randint(-290, 290)
         food.goto(x,y)
-
         #increase the score within the if food distance check
         score += 20
+        score.update_score()
 
         #add a segment to the snake, make them different than the head so we can track it though
-        new_segment = turtle.Turtle()
-        new_segment.speed(0)
-        new_segment.shape("square")
-        new_segment.color("grey")
-        new_segment.penup()
-        segments.append(new_segment) 
+        segments.append(body) 
 
     #move the end segments first in reverse order
     for index in range(len(segments)-1 ,0, -1):
@@ -179,7 +185,7 @@ while True:
         # will move to the position of the third to last segment, etc.
 
     for segment in segments:
-        if Snake.head.distance(segment) < 20:
+        if head.distance(segment) < 20:
             game_over_turtle.write("Game Over", align="center", font=("Courier", 38, "normal"))
             time.sleep(1)
             win.clear()
@@ -190,6 +196,3 @@ while True:
         y = head.ycor()
         segments[0].goto(x,y) # this is the first segment, so it will move to the position of the head
         # it needs to be seperate because the head is not a segment, so it needs to be moved seperately
-
-    Snake.move()
-    time.sleep(delay)
