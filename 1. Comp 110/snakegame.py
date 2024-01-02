@@ -2,11 +2,8 @@ import time
 import random
 import turtle
 
-## To do list ##
-# 6. make some type of recursion for the snake body
-
 ###########################################################
-################## PREP WORK ##############################
+################## Classes and prep work ##################
 class GameCharacters(turtle.Turtle):
     def __init__(self, x,y, shape="square", color="white", speed=0):
         super().__init__()
@@ -36,9 +33,28 @@ class Title(GameCharacters):
 class SnakeBody(GameCharacters):
     def __init__(self):
         super().__init__(0,0, "square", "grey")
-        self.direction = "stop"
+        self.direction = None
+        
+    ### movements
+    def go_up(self):
+        print("up")
+        self.direction = "up"
 
+    def go_down(self):
+        print("down")
+        self.direction = "down"
+
+    def go_left(self):
+        print("left")
+        self.direction = "left"
+
+    def go_right(self):
+        print("right")
+        self.direction = "right"
+        
     def move(self):
+        print("Current direction:", self.direction)
+
         if self.direction == "up":
             y = self.ycor()
             self.sety(y + 20)
@@ -64,13 +80,10 @@ class Score(GameCharacters):
         self.clear()
         self.write("Score: {}".format(score), align="top", font=("Courier", 12, "normal"))
 
-    pass
-
 #initialize classes
 food = Food()
 game_over_turtle = GameOver()
 title = Title()
-body = SnakeBody()
 score = Score()
 head = SnakeBody()
 
@@ -79,39 +92,24 @@ score = 0
 segments = []
 delay = 0
 
-### movements
-def go_up():
-    head.direction = "up"
-def go_down():
-    head.direction = "down"
-def go_left():
-    head.direction = "left"
-def go_right():
-    head.direction = "right"
-
 ###########################################################
 ############### GAME STARTS HERE  #########################
     
-#title screen creation and movement inputs
+#make our window that we'll be using for the game
 win = turtle.Screen()
 win.listen()
+
 win.title("Snake? SNAKE? SNAAAAAAAAAKE!")
 win.bgcolor("black")
 win.setup(width=600, height=600)
 
-# read arrow inputs to move the snake
-win.onkeypress(go_up, "Up")
-win.onkeypress(go_down, "Down")
-win.onkeypress(go_left, "Left")
-win.onkeypress(go_right, "Right")
-
 # or use WASD if needed
-win.onkeypress(go_up, "w")
-win.onkeypress(go_down, "s")
-win.onkeypress(go_left, "a")
-win.onkeypress(go_right, "d")
+win.onkeypress(head.go_up, "w")
+win.onkeypress(head.go_down, "s")
+win.onkeypress(head.go_left, "a")
+win.onkeypress(head.go_right, "d")
 
-
+## write the title screen options
 title.goto(0,0)
 title.write("Snake? SNAKE? SNAAAAAAAAAKE!", align="center", font=("Courier", 32, "normal"))
 
@@ -137,6 +135,8 @@ elif difficulty == "2":
 elif difficulty == "3":
     title.clear()
     delay = 0.01
+
+
 
 
 ##################################################
@@ -170,7 +170,7 @@ while True:
         score.update_score()
 
         #add a segment to the snake, make them different than the head so we can track it though
-        segments.append(body) 
+        segments.append(head) 
 
     #move the end segments first in reverse order
     for index in range(len(segments)-1 ,0, -1):
@@ -193,3 +193,5 @@ while True:
         y = head.ycor()
         segments[0].goto(x,y) # this is the first segment, so it will move to the position of the head
         # it needs to be seperate because the head is not a segment, so it needs to be moved seperately
+
+    time.sleep(delay)
