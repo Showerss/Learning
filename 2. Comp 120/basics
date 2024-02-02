@@ -1,0 +1,19 @@
+[]
+
+a_dict[k]
+
+Returns the value associated with k, otherwise its an error
+
+
+in
+
+key in a_dict
+
+Returns True if key is in the dictionary, False otherwise
+
+
+del
+
+del a_dict[key]
+
+Removes the entry from the dictionary
