@@ -105,6 +105,12 @@ Strings:
 
     3) Write a Python program to change a given string to a newly string where the first and last chars have been exchanged.
 """
+newString = input("Give me an example string")
+if len(newString) > 3:
+    newString = newString[:1] + newString[-2:]
+elif len(newString) :
+
+
 
 """
 Conditionals:
