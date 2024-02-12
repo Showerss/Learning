@@ -4,7 +4,7 @@
     and width and a method that will compute the 2d area of a rectangle.
 """
 
-class Rectangle:
+class Rectangle():
     """Docstring here"""
     #instance variables
     length: float
@@ -24,7 +24,21 @@ class Rectangle:
     Write a child class of rectangle, for a rectangular prism. 
     Add in an instance variable for depth and a method to find 
     the 3d area of the prism. 
+
+    class Child(Parent)
+    super().__init__(location) --- this calls the parent class constructor and pulls in some of the variables from the parent
 """
+class rectangular_prism(Rectangle):
+
+    height: float
+
+    def __init__(self, width:int, length:int, height:int) -> None:
+        super().__init__(length,width)
+        self.height = height
+
+    def get_3d_area(self) -> float:
+        area = self.area() * self.height
+        print(area)  
 
 # Exercise 3:
 """
@@ -32,6 +46,15 @@ class Rectangle:
     Find the 2d area of the rectangle and the rectangular prism.
     Find the 3d area of the rectangle and the rectangular prism.
 """
+
+rectangley = Rectangle(1,2)
+print(rectangley.area())
+
+
+prismey = rectangular_prism(12,10,5)
+print(prismey.area())
+print(prismey.get_3d_area())
+
 
 # Exercises to practice at home if you are struggling with these topics:
 """
