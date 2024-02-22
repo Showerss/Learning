@@ -1,13 +1,14 @@
-# All of our store items
-all_items = [["Taffy", 1], ["Chocolate", 2], ["Cup", 5], ["Plate", 10], ["Bowl", 11], ["Silverware", 22]]
+import tkinter as tk # traditional look
+from tkinter import ttk # modern look
 
-# Empty discounted_items list
-discounted_items = []
+# Create the application window
+window = tk.Tk()
 
-# Your code here
-for items in all_items:
-  if items[1] % 2 != 0:
-    discounted_items.append(items)
+def another():
+    print(entry.get())
 
-# For testing purposes: print discounted list
-print(discounted_items)
+entry = tk.Entry(window)
+entry.pack()
+entry.bind('<Return>', another)
+
+window.mainloop()
