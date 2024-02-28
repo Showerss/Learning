@@ -89,7 +89,7 @@ window.mainloop()
 from collections.abc import Callable
 
 def apply_func(func:Callable[[str],tuple[str,str]], value:str) -> tuple[str,str]:
-    return func(value)
+    return func(value) #this means that this functions returns another functions value
 
 def parse_email(email_address:str) -> tuple[str, str]:
     if "@" in email_address:

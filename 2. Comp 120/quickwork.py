@@ -2,39 +2,33 @@ import tkinter as tk
 from tkinter import ttk
 
 window = tk.Tk()
+window.geometry("400x400")
 
-first_row_frame = ttk.Frame(window)
-first_row_frame.pack()
+def calculateAreaSquare():
+    pass
 
-billText = ttk.Label(first_row_frame, text='Bill Due:')
-billText.pack(side='left')
+def calculateAreaCircle():
+    pass
 
-billEntry = ttk.Entry(window)
-billEntry.pack()
+def calculateAreaRectangle():
+    pass
 
+def calculateAreaTriangle():
+    pass
 
+param1Entry = tk.Entry(window)
+param1Entry.pack()
 
-second_row_frame = ttk.Frame(window)
-second_row_frame.pack()
+param2Entry = tk.Entry(window)
+param2Entry.pack()
 
-tip0 = ttk.Button(second_row_frame, text='0%')
-tip0.pack(side='left')
-
-tip15 = tk.Button(second_row_frame, text='15%')
-tip15.pack(side='left')
-
-tip20 = tk.Button(second_row_frame, text='20%')
-tip20.pack(side='left')
-
-tip25 = tk.Button(second_row_frame, text='25%')
-tip25.pack(side='left')
+param3Entry = tk.Entry(window)
+param3Entry.pack()
 
 
-
-third_row_frame = ttk.Frame(window)
-third_row_frame.pack()
-total = ttk.Label(third_row_frame, text='Bill Total:')
-total.pack(side='left')
-
+window.bind('s', calculateAreaSquare)
+window.bind('c', calculateAreaCircle)
+window.bind('t', calculateAreaTriangle)
+window.bind('r', calculateAreaRectangle)
 
 window.mainloop()
